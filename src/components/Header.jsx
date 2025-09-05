@@ -12,15 +12,18 @@ export const Header = () => {
     
     <div className="bg-white shadow-md p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold text-blue-600">ShopMate</h1>
-        <button 
+        
+        <div className="relative">
+            <button 
             onClick={() => setShowDropdown(!showDropdown)}
             className="cursor-pointer"
-        >
-            <div className="relative">
-            <FaShoppingCart className="text-xl text-gray-700" />
-            {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">{itemCount}</span>
-            )}
+            >
+                <FaShoppingCart className="text-xl text-gray-700" />
+                {itemCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">{itemCount}</span>
+                )}
+            </button>
+            
             { showDropdown && (
                 <div className='absolute right-0 mt-2 w-80 bg-white border rounded shadow-lg z-50'>
                     <div className="p-4">
@@ -47,7 +50,6 @@ export const Header = () => {
                 </div>
             )}
         </div>
-        </button>
     </div>
 
     
