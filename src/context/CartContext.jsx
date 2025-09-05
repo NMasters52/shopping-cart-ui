@@ -17,7 +17,7 @@ export function CartProvider({children}) {
                 );
             }
 
-            //if the item was not in the cart it be returned with the qty: 1 added to its data structure. 
+            //if the item was not in the cart return it with the qty: 1 added to its data structure. 
             return [...prev, {...product, qty: 1}];
             });
         };

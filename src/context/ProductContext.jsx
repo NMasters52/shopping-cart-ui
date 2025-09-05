@@ -17,7 +17,6 @@ export function ProductProvider({ children }) {
             }
             const data = await res.json();
             setProducts(data);
-            console.log(data);
         } catch (err) {
             setError(err.message);
         } finally {
