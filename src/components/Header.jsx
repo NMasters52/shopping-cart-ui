@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext"
 
 export const Header = () => {
     const [showDropdown, setShowDropdown] = useState(false);
-    const {cart, removeFromCart} = useCart();
+    const {cart, removeFromCart, clearCart} = useCart();
     const itemCount = cart.reduce((acc, item) => acc + item.qty, 0)
     const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2);
     
@@ -53,6 +53,13 @@ export const Header = () => {
                             <p>Total:</p>
                             <p>${total}</p>
                         </div>
+                        <button
+                            //no () => clearCart needed as it can be invoked without ()
+                            onClick={clearCart}
+                            className="mt-3 w-full bg-red-500 text-white py-1 rounded transition hover:bg-red-600"
+                        >
+                            Clear Cart
+                        </button>
                     </div>
                 </div>
             )}
